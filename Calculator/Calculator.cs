@@ -7,15 +7,6 @@ namespace Calculator
 {
     class Calculator
     {
-        static void Main()
-        {
-            Calculator cal = new Calculator();
-
-            Console.WriteLine("{0}",cal.Power(2, 3));
-            Console.WriteLine("{0}", cal.Power(-2, 3));
-            Console.WriteLine("{0}", cal.Power(2, -3));
-            Console.WriteLine("{0}", cal.Power(-2, -3));
-        }
         public double Add(double a, double b)
         {
             return a+b;
