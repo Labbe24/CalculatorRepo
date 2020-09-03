@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using Calculator;
+using Calculators;
 using NUnit.Framework;
 
 namespace CalculatorTest
@@ -12,7 +12,7 @@ namespace CalculatorTest
        public void Add_Two_Items()
         {
             // Arrange
-            var uut = new Calculators();
+            var uut = new Calculator();
 
             // Act
             //uut.Add(5, 5);
@@ -22,22 +22,22 @@ namespace CalculatorTest
         }
 
        [Test]
-       public void Substract_Two_Items()
+       public void Subtract_Two_Items()
        {
            // Arrange
-           var uut = new Calculators();
+           var uut = new Calculator();
 
            // Act
-           //uut.Substract(5, 5);
+           //uut.Subtract(5, 5);
 
            // Assert
-           Assert.That(uut.Substract(5, 5), Is.EqualTo(0));
+           Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
        }
        [Test]
        public void Multiply_Two_Items()
        {
            // Arrange
-           var uut = new Calculators();
+           var uut = new Calculator();
 
            // Act
            //uut.Multiply(5, 5);
@@ -49,7 +49,7 @@ namespace CalculatorTest
        public void Power()
        {
            // Arrange
-           var uut = new Calculators();
+           var uut = new Calculator();
 
            // Act
            //uut.Add(5, 5);

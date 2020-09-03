@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Calculator
+namespace Calculators
 {
-    class Calculators
+    public class Calculator
     {
-        public Calculators(){}
         public double Add(double a, double b)
         {
-            return a+b;
+            return a + b;
         }
 
         public double Subtract(double a, double b)
         {
-            return a-b;
+            return a - b;
         }
 
         public double Multiply(double a, double b)
         {
-            return a*b;
+            return a * b;
         }
 
         public double Power(double x, double exp)
