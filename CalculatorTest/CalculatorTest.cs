@@ -8,55 +8,61 @@ namespace CalculatorTest
     [TestFixture]
     class CalculatorTest
     {
+        private Calculator _uut = null;
+
+        [SetUp]
+        public void Setup()
+        {
+            // Arrange
+            _uut = new Calculator();
+        }
+
        [Test]
        public void Add_Two_Items()
         {
-            // Arrange
-            var uut = new Calculator();
-
             // Act
             //uut.Add(5, 5);
 
             // Assert
-            Assert.That(uut.Add(5, 5), Is.EqualTo(10));
+            Assert.That(_uut.Add(5, 5), Is.EqualTo(10));
         }
 
        [Test]
        public void Subtract_Two_Items()
        {
-           // Arrange
-           var uut = new Calculator();
-
            // Act
            //uut.Subtract(5, 5);
 
            // Assert
-           Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
+           Assert.That(_uut.Subtract(5, 5), Is.EqualTo(0));
        }
        [Test]
        public void Multiply_Two_Items()
        {
-           // Arrange
-           var uut = new Calculator();
-
            // Act
            //uut.Multiply(5, 5);
 
            // Assert
-           Assert.That(uut.Multiply(5, 5), Is.EqualTo(25));
+           Assert.That(_uut.Multiply(5, 5), Is.EqualTo(25));
        }
        [Test]
        public void Power()
        {
-           // Arrange
-           var uut = new Calculator();
-
            // Act
            //uut.Add(5, 5);
 
            // Assert
-           Assert.That(uut.Power(5, 5), Is.EqualTo(3125));
+           Assert.That(_uut.Power(5, 5), Is.EqualTo(3125));
+       }
 
+       [Test]
+       public void Sum_ThreeAddCalls_AccumulateToTen()
+       {
+           // Act
+           _uut.Add(2.5, 2.5);
+           _uut.Add(5);
+           // Assert
+           Assert.AreEqual(10, _uut.Accumulator);
        }
     }
 }
