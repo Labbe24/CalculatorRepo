@@ -56,7 +56,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Sum_ThreeAddCalls_AccumulateToTen()
+       public void Sum_TwoAddCalls_AccumulateToTen()
        {
            // Act
            _uut.Add(2.5, 2.5);
