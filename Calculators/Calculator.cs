@@ -65,5 +65,27 @@ namespace Calculators
             return Accumulator;
         }
 
+        public double Multiply(double a)
+        {
+            Accumulator *= a;
+            return Accumulator;
+        }
+
+        public double Divide(double divisor)
+        {
+            if (divisor == 0)
+            {
+                throw new DivideByZeroException("Divisor cannot be 0");
+            }
+            Accumulator /= divisor;
+            return Accumulator;
+        }
+
+        public double Power(double a)
+        {
+            Accumulator = Math.Pow(Accumulator, a);
+            return Accumulator;
+        }
+
     }
 } 

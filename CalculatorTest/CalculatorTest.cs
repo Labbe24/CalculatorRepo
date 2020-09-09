@@ -75,5 +75,38 @@ namespace CalculatorTest
            // Assert
            Assert.AreEqual(0,_uut.Accumulator);
        }
+
+       [Test]
+       public void Sum_TwoMultiplysCalls_AccmulateTo125()
+       {
+           // Act
+           _uut.Multiply(5, 5);
+           _uut.Multiply(5);
+
+           // Assert
+           Assert.AreEqual(125,_uut.Accumulator);
+       }
+
+       [Test]
+       public void Sum_TwoDivideCalls_AccmulateTo2()
+       {
+           // Act
+           _uut.Divide(100, 10);
+           _uut.Divide(5);
+
+           // Assert
+           Assert.AreEqual(2, _uut.Accumulator);
+       }
+
+       [Test]
+       public void Sum_TwoPowerCalls_AccmulateTo16()
+       {
+           // Act
+           _uut.Power(2, 2);
+           _uut.Power(2);
+
+           // Assert
+           Assert.AreEqual(16, _uut.Accumulator);
+       }
     }
 }
