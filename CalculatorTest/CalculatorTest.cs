@@ -64,5 +64,16 @@ namespace CalculatorTest
            // Assert
            Assert.AreEqual(10, _uut.Accumulator);
        }
+
+       [Test]
+       public void Sum_TwoSubtractCalls_AccumulateToZero()
+       {
+           // Act
+           _uut.Subtract(10, 5);
+           _uut.Subtract(5);
+
+           // Assert
+           Assert.AreEqual(0,_uut.Accumulator);
+       }
     }
 }
