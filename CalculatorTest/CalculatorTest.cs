@@ -147,7 +147,7 @@ namespace CalculatorTest
 
        // OverloadedAddTests
         [Test]
-       public void Add_OnePositiveDouble_AccumulateTo5()
+       public void OverloadedAdd_OnePositiveDouble_AccumulateTo5()
        {
            // Act
            _uut.Add(5);
@@ -156,7 +156,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Add_OneNegativeDouble_AccumulateToNegative5()
+       public void OverloadedAdd_OneNegativeDouble_AccumulateToNegative5()
        {
            // Act
            _uut.Add(-5);
@@ -165,7 +165,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Add_Zero_AccumulateToZero()
+       public void OverloadedAdd_Zero_AccumulateToZero()
        {
            // Act
            _uut.Add(0);
@@ -175,7 +175,7 @@ namespace CalculatorTest
 
        // OverloadedSubtractTests
         [Test]
-       public void Subtract_PositiveDouble_AccumulateToNegative5()
+       public void OverloadedSubtract_PositiveDouble_AccumulateToNegative5()
        {
            // Act
            _uut.Subtract(5);
@@ -185,7 +185,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Subtract_OneNegativeDouble_AccumulateTo5()
+       public void OverloadedSubtract_OneNegativeDouble_AccumulateTo5()
        {
            // Act
            _uut.Subtract(-5);
@@ -194,7 +194,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Subtract_Zero_AccumulateToZero()
+       public void OverloadedSubtract_Zero_AccumulateToZero()
        {
            // Act
            _uut.Subtract(0);
@@ -204,7 +204,7 @@ namespace CalculatorTest
         
        // OverloadedMultiplyTests
         [Test]
-       public void Multiply_PositiveDouble_AccumulateToZero()
+       public void OverloadedMultiply_PositiveDouble_AccumulateToZero()
        {
            // Act
            _uut.Multiply(5);
@@ -214,7 +214,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Multiply_NegativeDoubleAccumulatorSetTo2_AccumulateToNegative10()
+       public void OverloadedMultiply_NegativeDoubleAccumulatorSetTo2_AccumulateToNegative10()
        {
            // Arrange
            _uut.Add(1, 1);
@@ -227,7 +227,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Multiply_PositiveDoubleAccumulatorSetTo2_AccumulateTo10()
+       public void OverloadedMultiply_PositiveDoubleAccumulatorSetTo2_AccumulateTo10()
        {
            // Arrange
            _uut.Add(1, 1);
@@ -241,7 +241,7 @@ namespace CalculatorTest
 
        // OverloadedDivideTests
         [Test]
-       public void Divide_PositiveDouble_AccumulateTo0()
+       public void OverloadedDivide_PositiveDouble_AccumulateTo0()
        {
            // Act
            _uut.Divide(5);
@@ -251,7 +251,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Divide_PositiveDoubleAccumulatorSetTo10_AccumulateTo2()
+       public void OverloadedDivide_PositiveDoubleAccumulatorSetTo10_AccumulateTo2()
        {
            // Arrange
            _uut.Add(5,5);
@@ -275,7 +275,7 @@ namespace CalculatorTest
 
        // OverloadedPowerTests
         [Test]
-       public void Power_TwoPowerCalls_AccumulateTo16()
+       public void OverloadedPower_TwoPowerCalls_AccumulateTo16()
        {
            // Arrange
            _uut.Add(2, 2);
@@ -298,7 +298,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void Power_ExponentZero_AccumulateTo1()
+       public void OverloadedPower_ExponentZero_AccumulateTo1()
        {
            // Arrange
            _uut.Add(2, 2);
