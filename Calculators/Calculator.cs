@@ -27,6 +27,10 @@ namespace Calculators
 
         public double Power(double x, double exp)
         {
+            if (exp < 0)
+            {
+                throw new ArgumentException("Exponent cannot be negative");
+            }
             Accumulator = Math.Pow(x, exp);
             return Accumulator;
         }
@@ -83,6 +87,10 @@ namespace Calculators
 
         public double Power(double a)
         {
+            if (a < 0)
+            {
+                throw new ArgumentException("Exponent cannot be negative");
+            }
             Accumulator = Math.Pow(Accumulator, a);
             return Accumulator;
         }
