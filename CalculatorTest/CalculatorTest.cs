@@ -19,94 +19,106 @@ namespace CalculatorTest
 
         // AddTests
        [Test]
-       public void Add_Two_Items()
+       public void Add_FiveAndFive_ReturnsTen()
         {
             // Act
-            //uut.Add(5, 5);
+            double result = _uut.Add(5, 5);
 
             // Assert
-            Assert.That(_uut.Add(5, 5), Is.EqualTo(10));
+            Assert.That(result, Is.EqualTo(10));
         }
 
        [Test]
-       public void Add_TwoNegativeDouble_AccumulateToNegative15()
+       public void Add_MinusTenAndMinusFive_ReturnsMinusFifteen()
        {
            // Act
-           //uut.Add(5, 5);
+           double result = _uut.Add(-10, -5);
 
            // Assert
-           Assert.That(_uut.Add(-10, -5), Is.EqualTo(-15));
+           Assert.That(result, Is.EqualTo(-15));
        }
 
        [Test]
-       public void Add_OneNegativeOnePositive_AccumulateToZero()
+       public void Add__MinusFiveAndFive_ReturnsZero()
        {
            // Act
-           //uut.Add(5, 5);
+           double result = _uut.Add(-5, 5);
 
            // Assert
-           Assert.That(_uut.Add(-5, 5), Is.EqualTo(0));
+           Assert.That(result, Is.EqualTo(0));
        }
 
         // SubtractTests
         [Test]
-       public void Subtract_Two_Items()
+       public void Subtract_FiveAndFive_ReturnsZero()
        {
            // Act
-           //uut.Subtract(5, 5);
+           double result = _uut.Subtract(5, 5);
 
            // Assert
-           Assert.That(_uut.Subtract(5, 5), Is.EqualTo(0));
+           Assert.That(result, Is.EqualTo(0));
        }
        [Test]
-       public void Subtract_TwoNegativeDouble_AccumulateToNegative5()
+       public void Subtract_MinusTenAndMinusFive_ReturnsMinusFive()
        {
-           // Assert
-           Assert.That(_uut.Subtract(-10, -5), Is.EqualTo(-5));
+            // Act
+            double result = _uut.Subtract(-10, -5);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(-5));
        }
 
        [Test]
-       public void Subtract_OneNegativeOnePositive_AccumulateToNegative10()
+       public void Subtract_MinusFiveAndFive_ReturnsMinusTen()
        {
+           // Act
+
+           double result = _uut.Subtract(-5, 5);
            // Assert
-           Assert.That(_uut.Subtract(-5, 5), Is.EqualTo(-10));
+           Assert.That(result, Is.EqualTo(-10));
        }
         [Test]
-       public void Multiply_Two_Items()
+       public void Multiply_FiveAndFive_ReturnsTwentyFive()
        {
            // Act
-           //uut.Multiply(5, 5);
+           double result = _uut.Multiply(5, 5);
 
            // Assert
-           Assert.That(_uut.Multiply(5, 5), Is.EqualTo(25));
+           Assert.That(result, Is.EqualTo(25));
        }
        [Test]
-       public void Multiply_TwoNegativeDouble_AccumulateTo50()
+       public void Multiply_MinusTenAndMinusFive_ReturnsFifty()
        {
+           // Act
+           double result = _uut.Multiply(-10, -5);
+
            // Assert
-           Assert.That(_uut.Multiply(-10, -5), Is.EqualTo(50));
+           Assert.That(result, Is.EqualTo(50));
        }
 
        [Test]
-       public void Multiply_OneNegativeOnePositive_AccumulateToNegative25()
+       public void Multiply_MinusFiveAndFive_ReturnsMinusTwentyFive()
        {
+           // Act
+           double result = _uut.Multiply(-5, 5);
+
            // Assert
-           Assert.That(_uut.Multiply(-5, 5), Is.EqualTo(-25));
+           Assert.That(result, Is.EqualTo(-25));
        }
 
        // DivideTest
        [Test]
-       public void Divide_PositiveDouble_AccumulateTo1()
+       public void Divide_FiveAndFive_ReturnsOne()
        {
            // Act
-           _uut.Divide(5,5);
+           double result = _uut.Divide(5,5);
 
            // Assert
-           Assert.AreEqual(1, _uut.Accumulator);
+           Assert.That(result, Is.EqualTo(1));
        }
 
        [Test]
-       public void Divide_NegativeDouble_AccumulateToNegative1()
+       public void Divide_FiveAndMinusFive_ReturnsMinusOne()
        {
            // Act
            _uut.Divide(5, -5);
@@ -117,49 +129,56 @@ namespace CalculatorTest
 
        [Test]
 
-       public void Divide_DivisorIsZero_Exception()
+       public void Divide_FiveAndZero_Exception()
        {
-           // Assert
+           // Act&Assert
            Assert.That(()=>_uut.Divide(5,0), Throws.TypeOf<DivideByZeroException>());
        }
 
         // PowerTests
         [Test]
-       public void Power_TwoPositiveDoubles_AccumulateTo3125()
+       public void Power_FiveAndFive_ReturnsThreeThousandOneHundredTwentyFive()
        {
+           // Act
+           double result = _uut.Power(5,5);
            // Assert
-           Assert.That(_uut.Power(5, 5), Is.EqualTo(3125));
+            Assert.That(result, Is.EqualTo(3125));
        }
 
        [Test]
-       public void Power_TwoNegativeDouble_ThrowException()
+       public void Power_MinusTenAndMinusFive_Exception()
        {
-           // Assert
+            // Act&Assert
             Assert.That(() => _uut.Power(-10, -5), Throws.TypeOf<ArgumentException>());
         }
 
        [Test]
-       public void Power_OneNegativeOnePositive_AccumulateToZero()
+       public void Power_MinusFiveAndFive_ReturnsMinusThreeThousandOneHundredTwentyFive()
        {
+           // Act
+           double result = _uut.Power(-5, 5);
+
            // Assert
-           Assert.That(_uut.Power(-5, 5), Is.EqualTo(-3125));
+           Assert.That(result, Is.EqualTo(-3125));
        }
 
        // OverloadedAddTests
         [Test]
-       public void OverloadedAdd_OnePositiveDouble_AccumulateTo5()
+       public void OverloadedAdd_Five_AccumulateTo5()
        {
            // Act
            _uut.Add(5);
+
            // Assert
            Assert.AreEqual(5, _uut.Accumulator);
        }
 
        [Test]
-       public void OverloadedAdd_OneNegativeDouble_AccumulateToNegative5()
+       public void OverloadedAdd_MinusFive_AccumulateToMinus5()
        {
            // Act
            _uut.Add(-5);
+
            // Assert
            Assert.AreEqual(-5, _uut.Accumulator);
        }
@@ -169,13 +188,14 @@ namespace CalculatorTest
        {
            // Act
            _uut.Add(0);
+
            // Assert
            Assert.AreEqual(0, _uut.Accumulator);
        }
 
        // OverloadedSubtractTests
         [Test]
-       public void OverloadedSubtract_PositiveDouble_AccumulateToNegative5()
+       public void OverloadedSubtract_Five_AccumulateToMinusFive()
        {
            // Act
            _uut.Subtract(5);
@@ -185,10 +205,11 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedSubtract_OneNegativeDouble_AccumulateTo5()
+       public void OverloadedSubtract_MinusFive_AccumulateToFive()
        {
            // Act
            _uut.Subtract(-5);
+
            // Assert
            Assert.AreEqual(5, _uut.Accumulator);
        }
@@ -198,13 +219,14 @@ namespace CalculatorTest
        {
            // Act
            _uut.Subtract(0);
+
            // Assert
            Assert.AreEqual(0, _uut.Accumulator);
        }
         
        // OverloadedMultiplyTests
         [Test]
-       public void OverloadedMultiply_PositiveDouble_AccumulateToZero()
+       public void OverloadedMultiply_Five_AccumulateToZero()
        {
            // Act
            _uut.Multiply(5);
@@ -214,7 +236,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedMultiply_NegativeDoubleAccumulatorSetTo2_AccumulateToNegative10()
+       public void OverloadedMultiply_MinusFiveAccumulatorSetToTwo_AccumulateToMinusTen()
        {
            // Arrange
            _uut.Add(1, 1);
@@ -227,7 +249,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedMultiply_PositiveDoubleAccumulatorSetTo2_AccumulateTo10()
+       public void OverloadedMultiply_FiveAccumulatorSetToTwo_AccumulateToTen()
        {
            // Arrange
            _uut.Add(1, 1);
@@ -241,7 +263,7 @@ namespace CalculatorTest
 
        // OverloadedDivideTests
         [Test]
-       public void OverloadedDivide_PositiveDouble_AccumulateTo0()
+       public void OverloadedDivide_Five_AccumulateToZero()
        {
            // Act
            _uut.Divide(5);
@@ -251,7 +273,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedDivide_PositiveDoubleAccumulatorSetTo10_AccumulateTo2()
+       public void OverloadedDivide_FiveAccumulatorSetToTen_AccumulateToTwo()
        {
            // Arrange
            _uut.Add(5,5);
@@ -264,7 +286,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedDivide_DivisorIsZero_ThrowException()
+       public void OverloadedDivide_ZeroAccumulatorSetToFour_ThrowException()
        {
            // Arrange
            _uut.Add(2, 2);
@@ -275,7 +297,7 @@ namespace CalculatorTest
 
        // OverloadedPowerTests
         [Test]
-       public void OverloadedPower_TwoPowerCalls_AccumulateTo16()
+       public void OverloadedPower_TwoAccumulatorSetToFour_AccumulateToSixTeen()
        {
            // Arrange
            _uut.Add(2, 2);
@@ -288,7 +310,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedPower_NegativePower_ThrowException()
+       public void OverloadedPower_MinusTwoAccumulatorSetToTwo_Exception()
        {
            //Arrange
            _uut.Add(0, 2);
@@ -298,7 +320,7 @@ namespace CalculatorTest
        }
 
        [Test]
-       public void OverloadedPower_ExponentZero_AccumulateTo1()
+       public void OverloadedPower_ZeroAccumulatorSetToFour_AccumulateToOne()
        {
            // Arrange
            _uut.Add(2, 2);
