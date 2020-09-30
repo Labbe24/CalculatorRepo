@@ -292,7 +292,7 @@ namespace CalculatorTest
            _uut.Add(2, 2);
 
            // Assert
-           Assert.That(() => _uut.Divide(5, 0), Throws.TypeOf<DivideByZeroException>());
+           Assert.That(() => _uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
         }
 
        // OverloadedPowerTests
